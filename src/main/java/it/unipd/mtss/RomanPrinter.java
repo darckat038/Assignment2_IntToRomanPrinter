@@ -62,6 +62,14 @@ public class RomanPrinter {
                              " | |__| |",
                              " |_____/ "};
 
+        //Lettera M
+        String[] letter_M = {"  __  __ ",
+                             " |  \\/  |",
+                             " | \\  / |",
+                             " | |\\/| |",
+                             " | |  | |",
+                             " |_|  |_|"};                          
+
 
         for (int i = 0; i < 6; i++){
             for (int j = 0; j < romanNumber.length(); j++){
@@ -78,6 +86,8 @@ public class RomanPrinter {
                     outString += letter_C[i] + " ";
                 } else if ( romanNumber_char[j]=='D') {
                     outString += letter_D[i] + " ";
+                } else {
+                    outString += letter_M[i] + " ";
                 }
             }
             outString += "\n";

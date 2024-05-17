@@ -76,11 +76,31 @@ public class IntegerToRomanTest {
     }
 
     @Test
+    public void testPrimi100() {
+
+        //Test primi 100 numeri
+        //52  - 54  - 57   - 63    - 65  - 80   -  88      - 91  - 99   - 100
+        //LII - LIV - LVII - LXIII - LXV - LXXX - LXXXVIII - XCI - XCIX - C       
+
+        assertEquals("LII", IntegerToRoman.convert(52));
+        assertEquals("LIV", IntegerToRoman.convert(54));
+        assertEquals("LVII", IntegerToRoman.convert(57));
+        assertEquals("LXIII", IntegerToRoman.convert(63));
+        assertEquals("LXV", IntegerToRoman.convert(65));
+        assertEquals("LXXX", IntegerToRoman.convert(80));
+        assertEquals("LXXXVIII", IntegerToRoman.convert(88));
+        assertEquals("XCI", IntegerToRoman.convert(91));
+        assertEquals("XCIX", IntegerToRoman.convert(99));
+        assertEquals("C", IntegerToRoman.convert(100));
+    }
+
+
+    @Test
     public void testLimiti() {
 
         //Test numeri fuori range di conversione
 
         assertEquals("Errore: Numero non rispetta le PRE-Condizioni del Programma", IntegerToRoman.convert(-1));
-        assertEquals("Errore: Numero non rispetta le PRE-Condizioni del Programma", IntegerToRoman.convert(56));
+        assertEquals("Errore: Numero non rispetta le PRE-Condizioni del Programma", IntegerToRoman.convert(104));
     }
 }

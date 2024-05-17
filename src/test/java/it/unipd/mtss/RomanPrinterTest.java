@@ -15,6 +15,8 @@ public class RomanPrinterTest {
     public void testPrimi3() {
         
         //Test primi 3 numeri
+        //1 - 2  - 3
+        //I - II - III
         
         String v_1 = "  _____  \n" +
         " |_   _| \n" +
@@ -40,5 +42,38 @@ public class RomanPrinterTest {
         assertEquals(v_1, RomanPrinter.print(1));
         assertEquals(v_2, RomanPrinter.print(2));
         assertEquals(v_3, RomanPrinter.print(3));
+    }
+
+    @Test
+    public void testPrimi6() {
+        
+        //Test primi 6 numeri
+        //4  - 5 - 6
+        //IV - V - VI
+
+        String v_4 = "  _____   __      __ \n" +
+        " |_   _|  \\ \\    / / \n" +
+        "   | |     \\ \\  / /  \n" +
+        "   | |      \\ \\/ /   \n" +
+        "  _| |_      \\  /    \n" +
+        " |_____|      \\/     \n";
+
+        String v_5 = " __      __ \n" +
+        " \\ \\    / / \n" +
+        "  \\ \\  / /  \n" +
+        "   \\ \\/ /   \n" +
+        "    \\  /    \n" +
+        "     \\/     \n";
+
+        String v_6 = " __      __   _____  \n" +
+        " \\ \\    / /  |_   _| \n" +
+        "  \\ \\  / /     | |   \n" +
+        "   \\ \\/ /      | |   \n" +
+        "    \\  /      _| |_  \n" +
+        "     \\/      |_____| \n";
+
+        assertEquals(v_4, RomanPrinter.print(4));
+        assertEquals(v_5, RomanPrinter.print(5));
+        assertEquals(v_6, RomanPrinter.print(6));
     }
 }

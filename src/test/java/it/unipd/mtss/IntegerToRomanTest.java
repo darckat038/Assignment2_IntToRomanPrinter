@@ -36,11 +36,22 @@ public class IntegerToRomanTest {
     }
 
     @Test
+    public void testPrimi10() {
+
+        //Test primi 10 numeri
+
+        assertEquals("VII", IntegerToRoman.convert(7));
+        assertEquals("VIII", IntegerToRoman.convert(8));
+        assertEquals("IX", IntegerToRoman.convert(9));
+        assertEquals("X", IntegerToRoman.convert(10));
+    }
+
+    @Test
     public void testLimiti() {
 
         //Test numeri fuori range di conversione
 
         assertEquals("Errore: Numero non rispetta le PRE-Condizioni del Programma", IntegerToRoman.convert(-1));
-        assertEquals("Errore: Numero non rispetta le PRE-Condizioni del Programma", IntegerToRoman.convert(7));
+        assertEquals("Errore: Numero non rispetta le PRE-Condizioni del Programma", IntegerToRoman.convert(13));
     }
 }

@@ -9,14 +9,15 @@ public class IntegerToRoman {
 
     private static String[] unita = {"","I","II","III","IV","V","VI","VII","VIII","IX"};
     private static String[] decine = {"","X","XX","XXX","XL","L","LX","LXX","LXXX","XC"};
+    private static String[] centinaia = {"","C","CC","CCC","CD","D"};
 
     public static String convert(int number){
 
-        //Implementazione controllo > 0 && < 101 altrimenti return errore
-        if (number > 0 && number < 101) {
+        //Implementazione controllo > 0 && < 501 altrimenti return errore
+        if (number > 0 && number < 501) {
             char[] char_numero = String.valueOf(number).toCharArray();
             String outString = "";
-            
+
             // In base al numero di cifre del numero intero, si crea la stringa di return
             // Per il numero da restituire, si preleva il rispettivo valore dall'array di stringhe
             // e lo si aggiunge alla stringa di ritorno per comporla con le rispettive lettere romane
@@ -31,7 +32,10 @@ public class IntegerToRoman {
                 outString += decine[Integer.parseInt(String.valueOf(char_numero[0]))];
                 outString += unita[Integer.parseInt(String.valueOf(char_numero[1]))];
             } else if (char_numero.length == 3) {
-                outString += "C";
+                // 3 cifre --> numero con centinaia [pos 0], decine [pos 1] e unita [pos 2]
+                outString += centinaia[Integer.parseInt(String.valueOf(char_numero[0]))];
+                outString += decine[Integer.parseInt(String.valueOf(char_numero[1]))];
+                outString += unita[Integer.parseInt(String.valueOf(char_numero[2]))];
             }
 
             // Terminata la composizione, ritorno la stringa finale con il numero convertito.

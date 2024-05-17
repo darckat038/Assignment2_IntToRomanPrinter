@@ -54,6 +54,14 @@ public class RomanPrinter {
                              " | |____ ",
                              "  \\_____|"};
 
+        //Lettera D
+        String[] letter_D = {"  _____  ",
+                             " |  __ \\ ",
+                             " | |  | |",
+                             " | |  | |",
+                             " | |__| |",
+                             " |_____/ "};
+
 
         for (int i = 0; i < 6; i++){
             for (int j = 0; j < romanNumber.length(); j++){
@@ -68,6 +76,8 @@ public class RomanPrinter {
                     outString += letter_L[i] + " ";
                 } else if ( romanNumber_char[j]=='C') {
                     outString += letter_C[i] + " ";
+                } else if ( romanNumber_char[j]=='D') {
+                    outString += letter_D[i] + " ";
                 }
             }
             outString += "\n";

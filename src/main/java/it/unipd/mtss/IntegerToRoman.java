@@ -11,11 +11,12 @@ public class IntegerToRoman {
 
     public static String convert(int number){
 
-        //Implementazione controllo > 0 && < 11 altrimenti return errore
-        if (number > 0 && number < 11){
+        //Implementazione controllo > 0 && < 21 altrimenti return errore
+        if (number > 0 && number < 21){
             char[] char_numero = String.valueOf(number).toCharArray();
+                
             String outString = "";
-
+            
             // In base al numero di cifre del numero intero, si crea la stringa di return
             // Per il numero da restituire, si preleva il rispettivo valore dall'array di stringhe
             // e lo si aggiunge alla stringa di ritorno per comporla con le rispettive lettere romane
@@ -25,7 +26,12 @@ public class IntegerToRoman {
                 // 1 sola cifra --> numero con solo unità
                 outString += unita[Integer.parseInt(String.valueOf(char_numero[0]))];
             } else {
-                outString += "X";
+                    
+                if(Integer.parseInt(String.valueOf(char_numero[0])) == 1){
+                    outString += "X";
+                } else {
+                    outString += "XX";
+                }
                 outString += unita[Integer.parseInt(String.valueOf(char_numero[1]))];
             }
 

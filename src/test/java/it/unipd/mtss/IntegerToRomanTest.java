@@ -47,11 +47,25 @@ public class IntegerToRomanTest {
     }
 
     @Test
+    public void testPrimi20() {
+        
+        //Test primi 20 numeri
+        //11 - 14  - 17   - 19  - 20
+        //XI - XIV - XVII - XIX - XX
+
+        assertEquals("XI", IntegerToRoman.convert(11));
+        assertEquals("XIV", IntegerToRoman.convert(14));
+        assertEquals("XVII", IntegerToRoman.convert(17));
+        assertEquals("XIX", IntegerToRoman.convert(19));
+        assertEquals("XX", IntegerToRoman.convert(20));
+    }
+
+    @Test
     public void testLimiti() {
 
         //Test numeri fuori range di conversione
 
         assertEquals("Errore: Numero non rispetta le PRE-Condizioni del Programma", IntegerToRoman.convert(-1));
-        assertEquals("Errore: Numero non rispetta le PRE-Condizioni del Programma", IntegerToRoman.convert(13));
+        assertEquals("Errore: Numero non rispetta le PRE-Condizioni del Programma", IntegerToRoman.convert(21));
     }
 }

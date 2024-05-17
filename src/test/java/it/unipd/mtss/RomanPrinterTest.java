@@ -115,4 +115,53 @@ public class RomanPrinterTest {
         assertEquals(v_9, RomanPrinter.print(9));
         assertEquals(v_10, RomanPrinter.print(10));
     }
+
+    @Test
+    public void testPrimi20() {
+        
+        //Test primi 20 numeri
+        //11 - 14  - 17   - 19  - 20
+        //XI - XIV - XVII - XIX - XX
+
+        String v_11 = " __   __   _____  \n" +
+        " \\ \\ / /  |_   _| \n" +
+        "  \\ V /     | |   \n" +
+        "   > <      | |   \n" +
+        "  / . \\    _| |_  \n" +
+        " /_/ \\_\\  |_____| \n";    
+        
+        String v_14 = " __   __   _____   __      __ \n" +
+        " \\ \\ / /  |_   _|  \\ \\    / / \n" +
+        "  \\ V /     | |     \\ \\  / /  \n" +
+        "   > <      | |      \\ \\/ /   \n" +
+        "  / . \\    _| |_      \\  /    \n" +
+        " /_/ \\_\\  |_____|      \\/     \n";
+        
+        String v_17 = " __   __  __      __   _____    _____  \n" + 
+        " \\ \\ / /  \\ \\    / /  |_   _|  |_   _| \n" + 
+        "  \\ V /    \\ \\  / /     | |      | |   \n" + 
+        "   > <      \\ \\/ /      | |      | |   \n" + 
+        "  / . \\      \\  /      _| |_    _| |_  \n" + 
+        " /_/ \\_\\      \\/      |_____|  |_____| \n";
+        
+        String v_19 = " __   __   _____   __   __ \n" +
+        " \\ \\ / /  |_   _|  \\ \\ / / \n" +
+        "  \\ V /     | |     \\ V /  \n" +
+        "   > <      | |      > <   \n" +
+        "  / . \\    _| |_    / . \\  \n" +
+        " /_/ \\_\\  |_____|  /_/ \\_\\ \n";
+        
+        String v_20 = " __   __  __   __ \n" +
+        " \\ \\ / /  \\ \\ / / \n" +
+        "  \\ V /    \\ V /  \n" +
+        "   > <      > <   \n" +
+        "  / . \\    / . \\  \n" +
+        " /_/ \\_\\  /_/ \\_\\ \n";
+
+        assertEquals(v_11, RomanPrinter.print(11));
+        assertEquals(v_14, RomanPrinter.print(14));
+        assertEquals(v_17, RomanPrinter.print(17));
+        assertEquals(v_19, RomanPrinter.print(19));
+        assertEquals(v_20, RomanPrinter.print(20));
+    }
 }

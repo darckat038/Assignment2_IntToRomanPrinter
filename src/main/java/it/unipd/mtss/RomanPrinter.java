@@ -6,9 +6,38 @@
 package it.unipd.mtss;
 
 public class RomanPrinter {
+    //Costruttore con firma variabile intera
     public static String print(int num){
         return printAsciiArt(IntegerToRoman.convert(num));
     }
+
+    //Costruttore con firma variabile String -->
+    //Per errore se viene passato come input una stringa, quindi non int.
+    public static String print(String str){
+        try {
+            int num = Integer.parseInt(str);
+            return printAsciiArt(IntegerToRoman.convert(num));
+        } 
+        catch (NumberFormatException e) {
+            return "Errore: Input non numerico intero!";
+        }
+    }
+
+    //Costruttore con firma variabile Double -->
+    //Per errore se viene passato come input un valore dobule, quindi non int.
+    public static String print(double dbl){
+        try {
+            if (dbl == (int) dbl) {
+                return printAsciiArt(IntegerToRoman.convert((int)dbl));
+            } else {
+                throw new IllegalArgumentException("Errore: Input non numerico intero!");
+            }
+        } 
+        catch (IllegalArgumentException e) {
+            return "Errore: Input non numerico intero!";
+        }
+    }
+
     
     private static String printAsciiArt(String romanNumber){
         String outString = "";

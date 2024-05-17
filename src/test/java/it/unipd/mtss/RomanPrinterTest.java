@@ -504,4 +504,23 @@ public class RomanPrinterTest {
         assertEquals(v_989, RomanPrinter.print(989));
         assertEquals(v_1000, RomanPrinter.print(1000));
     }
+
+    //Test su input strani non numerici interi (es. stringhe e double)
+    @Test
+    public void testInputStrani(){
+
+        String v_14 = " __   __   _____   __      __ \n" +
+        " \\ \\ / /  |_   _|  \\ \\    / / \n" +
+        "  \\ V /     | |     \\ \\  / /  \n" +
+        "   > <      | |      \\ \\/ /   \n" +
+        "  / . \\    _| |_      \\  /    \n" +
+        " /_/ \\_\\  |_____|      \\/     \n";
+
+        assertEquals("Errore: Input non numerico intero!", RomanPrinter.print("M"));
+        assertEquals("Errore: Input non numerico intero!", RomanPrinter.print("MTSS"));
+        assertEquals("Errore: Input non numerico intero!", RomanPrinter.print("M*T/S-S!"));
+        assertEquals("Errore: Input non numerico intero!", RomanPrinter.print(12.678));
+        assertEquals(v_14, RomanPrinter.print(14.00));
+        assertEquals(v_14, RomanPrinter.print("14"));
+    }
 }
